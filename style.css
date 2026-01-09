@@ -13,6 +13,16 @@ body {
 }
 
 /* Your name */
+
+.main-nav a {
+    text-decoration: none;
+    letter-spacing: 0.10em;
+    text-transform: lowercase;
+    color: #222;
+    position: relative;
+    padding-bottom: 4px;
+}
+
 .site-title {
   font-family: "Sekuya", system-ui;
   font-size: 30pt;
@@ -22,13 +32,9 @@ body {
   margin-bottom: 0.6rem;
 }
 
-.site-header a {
+.site-title a {
+    color: brown;
     text-decoration: none;
-    letter-spacing: 0.10em;
-    text-transform: lowercase;
-    color: #222;
-    position: relative;
-    padding-bottom: 4px;
 }
 
 /* Navigation container */
