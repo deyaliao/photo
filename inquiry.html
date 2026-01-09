@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="/files/star.png">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Arimo:ital,wght@0,400..700;1,400..700&family=Kanit:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sekuya&family=Yuji+Boku&display=swap" rel="stylesheet">
+    <title>Deya Liao</title>
+</head>
+
+<body>
+
+<header class="site-header">
+  <h1 class="site-title">DEYA LIAO</h1>
+
+  <nav class="main-nav">
+    <a href="./about.html">about</a>
+    <a href="portfolio-day.html">portfolio</a>
+    <a href="inquiry.html" id="active-nav">inquiry</a>
+  </nav>
+</header>
+
+
+<!-- Page content -->
+<div class="main" id="Home">
+    <div class="content">
+        <div class="content-inner">
+            <p id="intro" class="inquiry-note">
+            thank you for considering me — i’m excited to work with you and help capture your special moments! ♡
+            </p>
+
+        <form
+        class="contact-form"
+        action="https://formspree.io/f/xwvpggeq"
+        method="POST"
+        >
+
+        <label>
+            Name
+            <input type="text" name="name" required>
+        </label>
+
+        <label>
+            Email
+            <input type="email" name="email" required>
+        </label>
+
+        <label>
+            Event Type
+            <select name="event" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="graduation">Graduation</option>
+            <option value="elopement">Elopement</option>
+            <option value="event">Event</option>
+            <option value="other">Other</option>
+            </select>
+        </label>
+
+        <div class="form-group">
+        <label for="message">
+            Additional info <br>
+            <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="tell me more about you + what you're looking for!"
+        ></textarea>
+        </label>
+        
+        </div>
+
+        <button type="submit">Send Inquiry</button>
+
+        </form>
+        <p class="form-success" id="form-success">
+            Thank you — I’ll be in touch soon ♡
+        </p>
+    </div>
+    </div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
