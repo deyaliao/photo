@@ -309,27 +309,7 @@ body {
   .contact-form {
     width: 100%;
     max-width: 100%;
-    padding: 0 1rem;
-    gap: 1rem;
   }
 
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .contact-form button {
-    font-size: 1rem;
-    padding: 1rem;
-  }
-
-  /* INQUIRY NOTE */
-  .inquiry-note {
-    max-width: 90%;
-    margin: 0 auto 1.5rem auto;
-    font-size: 0.95rem;
-  }
 }
 
