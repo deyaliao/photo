@@ -187,7 +187,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-  min-width: 500px;
+  width: 100%;
   margin-top: 2rem;
 }
 
@@ -293,10 +293,7 @@ body {
     font-size: 1.05rem;
     line-height: 1.65;
   }
-}
 
-@media screen and (max-width: 600px) {
-  /* PHOTO GRID (Mobile) */
   .grid-container {
     grid-template-columns: 1fr; /* single column */
     row-gap: 2rem;
@@ -335,3 +332,4 @@ body {
     font-size: 0.95rem;
   }
 }
+
