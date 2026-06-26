@@ -1,347 +1,369 @@
-
-body {
-    font-family: 'Arimo';
-    font-size: 12pt;
-  }
-  
-.site-header {
-  font-family: 'Arimo';
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5rem 1rem 1.5rem;
+/* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Your name */
+body {
+  font-family: 'Arimo', sans-serif;
+  font-size: 12pt;
+  margin: 0;
+  background: #f5f4f0;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
 
-.main-nav a {
-    text-decoration: none;
-    letter-spacing: 0.10em;
-    text-transform: lowercase;
-    color: #222;
-    position: relative;
-    padding-bottom: 4px;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Layout ── */
+.site-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem 2rem;
+  background: #f5f4f0;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  z-index: 100;
+  font-family: "Microsoft Sans Serif", "MS Sans Serif", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .site-title {
-  font-family: "Sekuya", system-ui;
-  font-size: 30pt;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: brown;
-  margin-bottom: 0.6rem;
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: #1a1a1a;
+  margin: 0 0 18px;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .site-title a {
-    color: brown;
-    text-decoration: none;
+  color: #1a1a1a;
 }
 
-/* Navigation container */
-.main-nav {
-  font-family: 'Yuji Boku';
-  font-size: 12pt;
+.sidebar-nav {
+  flex: 1;
   display: flex;
-  gap: 2.5rem;
-  padding-bottom: 2%;
+  flex-direction: column;
 }
 
-.main-nav a:hover {
-    color:#57493a
+.nav-columns {
+  display: flex;
+  flex-direction: column;
 }
 
-#active-nav {
-    color:#57493a
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
 }
 
-#inactive-box {
-    border: 1px solid white;
-    padding: 0.5rem 0.75rem;
-    display: inline-block;
-}
-#text-box {
-  border: 1px solid #57493a;
-  padding: 0.5rem 0.75rem;
-  display: inline-block;
+.nav-header,
+.nav-link,
+.nav-primary {
+  font-size: 17px;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  color: #1a1a1a;
+  line-height: 1.02;
 }
 
+.nav-header {
+  display: block;
+  font-weight: 700;
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  font-weight: 400;
+  padding: 0;
+}
+
+.nav-link::before {
+  content: '\2192\00a0';
+}
+
+.nav-link:hover {
+  color: #888;
+}
+
+.nav-link.active {
+  color: #c2641d;
+}
+
+.nav-bottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.nav-primary {
+  display: block;
+  font-weight: 700;
+  padding: 0;
+}
+
+.nav-primary:hover {
+  color: #888;
+}
+
+.nav-primary.active {
+  color: #c2641d;
+}
+
+.sidebar-footer {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: #888;
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.sidebar-footer a:hover {
+  color: #6b3a2e;
+}
+
+/* ── Main content ── */
 .main {
-    font-family: 'Arimo';
+  margin-left: 332px;
+  flex: 1;
+  width: calc(100% - 332px);
+  padding: 2rem 2rem 4rem;
 }
-  /* MAIN OVERVIEW */
-  .main a {
-    color: black;
-    text-decoration: none;
-  }
 
-  .main a:hover {
-    color:#57493a
-  }
+.page-content {
+  max-width: 1100px;
+}
 
-  #Home {
-    padding-bottom: 0px;
-  }
+.home-intro {
+  font-family: "Microsoft Sans Serif", "MS Sans Serif", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  line-height: 1.02;
+  letter-spacing: 0;
+  color: #000;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+}
 
-    .content {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+.gallery + .home-intro {
+  margin-top: 2.5rem;
+}
 
-    /* Width-constrained container */
-    .content-inner {
-        max-width: min(60vw, 900px);
-        margin: 0 auto;
-    }
+.series-title {
+  margin-bottom: 0.25rem;
+}
 
-    .content-photo {
-        max-width: min(80vw, 900px);
-        margin: 0 auto;
-    }
+/* ── Photo gallery (3-column) ── */
+.gallery {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
 
-    .sub-nav {
-        display: flex;
-        justify-content: center;
+.gallery-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
+}
 
-        gap: 1.5rem;
-    }
+.gallery-col img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-    /* Split layout */
-    .about-split {
-    display: grid;
-    grid-template-columns: 35% 65%;
-    gap: 2.5rem;
-    align-items: start;
-    }
+.gallery-col img.portrait {
+  aspect-ratio: 2000 / 3000;
+  object-fit: cover;
+}
 
-    /* Text column */
-    .about {
-        font-size: 1rem;
-    }
+/* ── About ── */
+.about-split {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 1rem;
+  padding-right: 4rem;
+}
 
-    #intro {
-        font-family: Yuji Boku;
-        font-size: 14pt;
-        color: brown;
-    }
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-    /* Image column */
-    .about-photo img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 4px; /* subtle polish */
-        max-width: 100%;   
-    }
+.about {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 36rem;
+}
 
+.about .home-intro:first-child {
+  margin-top: 0;
+}
 
-  /* PHOTOS  */
-  .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    column-gap: 3%;
-    row-gap: 3%;
-  }
+#intro {
+  font-size: 1.1rem;
+  color: #6b3a2e;
+  margin-top: 0;
+}
 
-  .grid-item {
-    text-align: center;
-  }
+.about .copyright {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 2rem;
+}
 
-  .Exit {
-    text-align: right;
-  }
+/* ── Inquire form ── */
+.inquire-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .grid-item img { 
-    object-fit: cover;
-  }
+.inquire-center .home-intro {
+  text-align: center;
+}
 
-  /* Responsive Layout for Photos */
-  .row {
-    /* display: -ms-flexbox; IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-    /* gap: 5%; */
-  }
-  
-  /* Create three equal columns that sits next to each other */
-  .column {
-    flex: 32%;   
-    -ms-flex: wrap; /* IE10 */
-    align-items: flex-start;
-    /* justify-content: center; */
-  }
-  
-  .column img {
-    vertical-align: middle;
-    width: 92%;
-    padding: 3%;
-  }
-
-  /* INQUIRY FORM */
-  .form-group {
-    width: 100%;
-    display: block;
-  }
-  .contact-form {
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
   width: 100%;
-  margin-top: 2rem;
+  max-width: 32rem;
 }
 
-/* Labels */
 .contact-form label {
   display: flex;
   flex-direction: column;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  font-family: "Microsoft Sans Serif", "MS Sans Serif", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  line-height: 1.02;
+  letter-spacing: 0;
   text-transform: lowercase;
-}
-
-/* Inputs */
-.contact-form input,
-.contact-form select {
-  margin-top: 0.4rem;
-  padding: 0.6rem 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #000;
-  background: transparent;
-  font-family: inherit;
-}
-
-/* Button */
-.contact-form button {
-  margin-top: 1.5rem;
-  padding: 0.75rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border: 1px solid #000;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom:4.5rem;
-}
-
-.contact-form button:hover {
-  background: #000;
-  color: #fff;
-}
-
-/* Success message */
-.form-success {
-  display: none;
-  margin-top: 2rem;
-  font-size: 1rem;
-  text-align: center;
-}
-
-.inquiry-note {
-  text-align: center;
-  font-size: 1rem;
-  font-style: italic;
-  margin-bottom: 2rem;
-  color: #222;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-
-
-  /* MOBILE & TABLET RESPONSIVE STYLES */
-@media screen and (max-width: 1024px) {
-  /* PHOTO GRID (Tablet) */
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
-    column-gap: 2%;
-    row-gap: 2%;
-  }
-
-  .column {
-    flex: 48%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  /* NAVIGATION */
-  .main-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem; /* adjust spacing if needed */
-
-  }
-
-  /* CONTENT INNER */
-  .content-inner {
-    max-width: 100%;
-    padding: 0 1.25rem;
-  }
-
-  /* ABOUT SECTION */
-  .about-split {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .about {
-    font-size: 1.05rem;
-    line-height: 1.65;
-  }
-
-  .grid-container {
-    grid-template-columns: 1fr; /* single column */
-    row-gap: 2rem;
-    column-gap: 0;
-  }
-
-  .column {
-    flex: 100%;
-    margin-bottom: 2rem;
-  }
-
-  /* CONTACT FORM */
-  .contact-form {
-    width: 100%;
-    max-width: 100%;
-  }
-
-    .contact-form select {
-  background-color: transparent;
-  border: 1px solid #000;
-  padding: 0.6rem 0.5rem;
-}
-
-.contact-form button {
-  color: #000;
-  background-color: transparent;
-  border: 1px solid #000;
-}
-
-.contact-form button:hover {
-  background-color: #000;
-  color: #fff;
-  -webkit-text-fill-color: #fff;
 }
 
 .contact-form input,
 .contact-form select,
-.contact-form button,
 .contact-form textarea {
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.5rem;
+  font-family: "Microsoft Sans Serif", "MS Sans Serif", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  border: 1px solid #1a1a1a;
+  background: transparent;
+  border-radius: 0;
   -webkit-appearance: none;
   appearance: none;
-  border-radius: 0;
-  background-color: transparent;
-  color: #000;
-  -webkit-text-fill-color: #000; /* iOS fix */
 }
 
-
-
+.contact-form textarea {
+  resize: vertical;
+  min-height: 6rem;
 }
 
+.contact-form button {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  font-family: "Microsoft Sans Serif", "MS Sans Serif", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  border: 1px solid #1a1a1a;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.form-success {
+  display: none;
+  margin-top: 2rem;
+  font-family: "Microsoft Sans Serif", "MS Sans Serif", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  line-height: 1.02;
+}
+
+/* ── Mobile menu toggle ── */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 200;
+  background: none;
+  border: 1px solid #1a1a1a;
+  padding: 0.4rem 0.7rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  cursor: pointer;
+  background: #f5f4f0;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: none;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .main {
+    margin-left: 0;
+    width: 100%;
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .gallery {
+    gap: 0.75rem;
+  }
+
+  .gallery-col {
+    gap: 0.75rem;
+  }
+
+  .about-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery {
+    flex-direction: column;
+  }
+}

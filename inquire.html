@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Sekuya&family=Yuji+Boku&display=swap" rel="stylesheet">
-  <title>Deya Liao — About</title>
+  <title>Deya Liao — Inquire</title>
 </head>
 <body>
 
@@ -36,30 +36,61 @@
       </div>
 
       <div class="nav-bottom">
-        <a href="about.html" class="nav-primary active">about</a>
-        <a href="inquire.html" class="nav-primary">inquire</a>
+        <a href="about.html" class="nav-primary">about</a>
+        <a href="inquire.html" class="nav-primary active">inquire</a>
       </div>
     </nav>
 
   </aside>
 
   <main class="main">
-    <div class="page-content">
-      <div class="about-split">
-        <div class="about-photo">
-          <img src="deya.JPG" alt="Deya">
-        </div>
+    <div class="page-content inquire-center">
+      <p class="home-intro">
+        thank you for considering me — i'm excited to work with you and help capture your special moments!
+      </p>
 
-        <div class="about">
-          <p class="home-intro">nice to meet you! my name is deya [德雅].</p>
-          <p class="home-intro">i am a recent graduate from carnegie mellon, studying both computer science and visual media.</p>
-          <p class="home-intro">photographing university life has made me fall deeply in love with the artistic process: each image is taken from the lens of celebration, friendship, and storytelling. i believe the moments that make life feel full are worth capturing and celebrating!</p>
-          <p class="home-intro">i'm fluent in english and mandarin, and regularly work with students, families, and community members.</p>
-          <p class="home-intro">it would be a joy to work with you &lt;3</p>
-          <p class="home-intro">instagram: <a href="https://www.instagram.com/shotbydeya/">@shotbydeya</a><br>email: deya.liao@gmail.com</p>
-          <p class="copyright">coded from scratch. &copy; 2026</p>
-        </div>
-      </div>
+      <form
+        id="contact-form"
+        class="contact-form"
+        action="https://formspree.io/f/xwvpggeq"
+        method="POST"
+      >
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+
+        <label>
+          Event Type
+          <select name="event" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="graduation">Graduation</option>
+            <option value="elopement">Elopement</option>
+            <option value="event">Event</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+
+        <label>
+          Additional info
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="tell me more about you + what you're looking for!"
+          ></textarea>
+        </label>
+
+        <button type="submit">Send Inquiry</button>
+      </form>
+
+      <p class="form-success" id="form-success">
+        Thank you — I'll be in touch soon ♡
+      </p>
     </div>
   </main>
 </div>
