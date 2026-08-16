@@ -368,6 +368,12 @@ a {
 
 /* ── Responsive ── */
 @media screen and (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+    font-size: 1.1rem;
+    padding: 0.3rem 0.6rem;
+  }
+
   .site-layout {
     flex-direction: column;
   }
@@ -378,11 +384,19 @@ a {
     height: auto;
     border-right: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    padding: 1.5rem 1.25rem 1.25rem;
+    padding: 1rem 1.25rem 1rem;
+    padding-right: 4rem;
   }
 
   .sidebar-nav {
+    display: none;
     flex: unset;
+  }
+
+  .sidebar.open .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
   }
 
   .nav-columns {
@@ -398,7 +412,7 @@ a {
   .main {
     margin-left: 0;
     width: 100%;
-    padding: 2rem 1.25rem 3rem;
+    padding: 1rem 1.25rem 3rem;
   }
 
   .gallery {
